@@ -4,7 +4,7 @@
 using namespace std;
 
 int ** matriz;
-int * arreglo;
+char * arreglo;
 
 void imprimir (int, int);
 
@@ -129,7 +129,7 @@ int main(){
 				int num;
 				cout<<"Ingrese un numero(mayor que 0): ";
 				cin>>num;
-				while (num<=0){
+				while (num<=0){//validacion para evitar cualquier error por negativos
 					cout<<"El numero no puede ser negativo o 0, intentelo de nuevo: ";
 					cin>>num;
 				}
@@ -138,7 +138,7 @@ int main(){
 				int d=1;
 				bool val=false;
 				while (c<=num){
-					if (c==num){
+					if (c==num){//condicion si el numero es triangular
 						val=true;
 						cout<<"El numero ingresado si es triangular"<<endl<<endl;
 						c+=100;
@@ -148,14 +148,29 @@ int main(){
 						c+=d;
 					}
 				}
-				if (val==false){
+				if (val==false){//resultado si el numero no es triangular
 					cout<<"El numero ingresado no es triangular, el numero "<<temp2<<" es el mas cercano"<<endl<<endl;
 				}
 				break;
 			}
 			
 			case 3:{
+				int num;
+				cout<<"Ingrese la longitud del arreglo(mayor que 1): ";
+				cin>>num;
+				while (num<=1){//validacion para evitar cualquier error
+					cout<<"El numero no puede ser negativo o 0, intentelo de nuevo: ";
+					cin>>num;
+				}
 				
+				*arreglo = new char[num];
+				
+				for (int i=0; i<num; i++){
+					cout<<"Ingrese el caracter en la posicion ["<<i<<"]: ";
+					cin>>arreglo[i];
+				}
+				
+				cout<<"Todas los posibles ordenes del arreglo son: "
 				break;
 			}
 			default:{
@@ -167,7 +182,7 @@ int main(){
 	}
 }
 
-void imprimir (int x, int y){
+void imprimir (int x, int y){//metodo recursivo para llenar la matriz
 	if (x==4 && y==4){
 		cout<<"["<<matriz[x][y]<<"]"<<endl;
 	}else{
