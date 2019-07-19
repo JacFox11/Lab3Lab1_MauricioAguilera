@@ -133,12 +133,23 @@ int main(){
 					cout<<"El numero no puede ser negativo o 0, intentelo de nuevo: ";
 					cin>>num;
 				}
-				c=1;
-				bool val=true;
+				int c=1;
+				int temp2;
+				int d=1;
+				bool val=false;
 				while (c<=num){
 					if (c==num){
-						
+						val=true;
+						cout<<"El numero ingresado si es triangular"<<endl<<endl;
+						c+=100;
+					}else{
+						temp2=c;
+						d++;
+						c+=d;
 					}
+				}
+				if (val==false){
+					cout<<"El numero ingresado no es triangular, el numero "<<temp2<<" es el mas cercano"<<endl<<endl;
 				}
 				break;
 			}
