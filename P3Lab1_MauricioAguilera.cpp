@@ -169,8 +169,17 @@ int main(){
 					cout<<"Ingrese el caracter en la posicion ["<<i<<"]: ";
 					cin>>arreglo[i];
 				}
-				
-				cout<<"Todas los posibles ordenes del arreglo son: "
+				bool val=true;
+				for (int i=0; i<num; i++){
+					for (int j=i+1; j<num; j++){
+						if (arreglo[i]==arreglo[j]){
+							val=false;
+						}
+					}
+				}
+				if (val==true){
+					
+				}
 				break;
 			}
 			default:{
