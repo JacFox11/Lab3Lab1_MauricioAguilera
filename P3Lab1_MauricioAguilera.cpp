@@ -224,7 +224,7 @@ void printsec(int x, int y){//metodo para llamar el recursivo que imprimira las 
 void secuencias(int x, int y, int z, char data[], int i){//metodo recursivo que encuentra todas las combinaciones, o eso era lo entendido
     if (i == y){//imprime la combinacion actual
         for (int j = 0; j < y; j++){
-            cout<<"["<<data[j]<<"]";  
+            cout<<data[j];  
         }
         cout << endl;  
         return;  
