@@ -8,6 +8,10 @@ char * arreglo;
 
 void imprimir (int, int);
 
+void printsec(int, int);
+
+void secuencias(int, int, int, char [], int);
+
 int main(){
 	char resp='s';
 	
@@ -163,7 +167,7 @@ int main(){
 					cin>>num;
 				}
 				
-				*arreglo = new char[num];
+				arreglo = new char[num];
 				
 				for (int i=0; i<num; i++){
 					cout<<"Ingrese el caracter en la posicion ["<<i<<"]: ";
@@ -178,9 +182,10 @@ int main(){
 					}
 				}
 				if (val==true){
-					for (int i=0;i<num*(num-1) ; i++ ){
-						
-					}
+					printsec(num, num-1);
+				}
+				else{
+					cout<<"El arreglo es invalido"<<endl<<endl;
 				}
 				break;
 			}
@@ -205,4 +210,28 @@ void imprimir (int x, int y){//metodo recursivo para llenar la matriz
 			imprimir (x, y+1);
 		}
 	}
+}
+
+void printsec(int x, int y){//metodo para llamar el recursivo que imprimira las secuencias
+    char data[y];  
+    
+    secuencias(x, y, 0, data, 0);  
+}  
+void secuencias(int x, int y, int z, char data[], int i){//metodo recursivo que encuentra todas las combinaciones
+    if (z == y){  
+        for (int j = 0; j < y; j++){
+            cout<<"["<<data[j]<<"]";  
+        }
+        cout << endl;  
+        return;  
+    }  
+    
+    if (i >= x){
+        return;  
+  	}
+  	
+    data[z] = arreglo[i];  
+    secuencias(x, y, z + 1, data, i+1);  
+    
+    secuencias(x, y, z, data, i+1);  
 }
