@@ -126,7 +126,20 @@ int main(){
 			}
 			
 			case 2:{
-				
+				int num;
+				cout<<"Ingrese un numero(mayor que 0): ";
+				cin>>num;
+				while (num<=0){
+					cout<<"El numero no puede ser negativo o 0, intentelo de nuevo: ";
+					cin>>num;
+				}
+				c=1;
+				bool val=true;
+				while (c<=num){
+					if (c==num){
+						
+					}
+				}
 				break;
 			}
 			
