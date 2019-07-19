@@ -178,7 +178,9 @@ int main(){
 					}
 				}
 				if (val==true){
-					
+					for (int i=0;i<num*(num-1) ; i++ ){
+						
+					}
 				}
 				break;
 			}
