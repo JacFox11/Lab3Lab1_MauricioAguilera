@@ -25,12 +25,12 @@ int main(){
 		cin>>op;
 		
 		switch (op){
-			case 1:{
+			case 1:{//ejercicio 1
 				matriz= new int*[5];
 				for (int i=0; i<5; i++){
 					matriz[i]=new int[5];
 				}
-				for	(int i=0; i<5; i++){
+				for	(int i=0; i<5; i++){//llena la matriz
 					for (int j=0; j<5 ;j++){
 						cout<<"Ingrese el valor del espacio ["<<i<<"]["<<j<<"]: ";
 						cin>>matriz[i][j];
@@ -182,7 +182,11 @@ int main(){
 					}
 				}
 				if (val==true){
-					printsec(num, num-1);
+					int fact=1;
+					for(int i=1;i<=num;i++){    
+					    fact=fact*i;    
+	  				}    
+					printsec(fact, num);
 				}
 				else{
 					cout<<"El arreglo es invalido"<<endl<<endl;
@@ -218,7 +222,7 @@ void printsec(int x, int y){//metodo para llamar el recursivo que imprimira las 
     secuencias(x, y, 0, data, 0);  
 }  
 void secuencias(int x, int y, int z, char data[], int i){//metodo recursivo que encuentra todas las combinaciones
-    if (z == y){  
+    if (z == y){//imprime la combinacion actual
         for (int j = 0; j < y; j++){
             cout<<"["<<data[j]<<"]";  
         }
@@ -230,7 +234,7 @@ void secuencias(int x, int y, int z, char data[], int i){//metodo recursivo que 
         return;  
   	}
   	
-    data[z] = arreglo[i];  
+    data[z] = arreglo[i];
     secuencias(x, y, z + 1, data, i+1);  
     
     secuencias(x, y, z, data, i+1);  
